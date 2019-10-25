@@ -1,6 +1,7 @@
-# Toggle password visibility
-Vanilla JS script that toggles the visibility of a password input field.
+# Character Count
 
-Project 1 of [Vanilla JS Academy](https://vanillajsacademy.com/)
+Vanilla JS script that counts number of characters in the input field real time.
+
+Project 4 of [Vanilla JS Academy](https://vanillajsacademy.com/)
 
 [View Demo](https://mashablair.github.io/vanilla-js-toggle-password/)

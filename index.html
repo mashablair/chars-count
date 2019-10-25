@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A script that lets users toggle the visibility of a password field.">
-  <title>Password Visibility</title>
+  <title>Character Count</title>
 
   <style type="text/css">
     body {
@@ -42,7 +42,14 @@
   <p>You've written <strong><span id="character-count">0</span> characters</strong>.</p>
 
   <script>
-    // your script goes here
+    var textarea = document.getElementById("text");
+    var count = document.getElementById("character-count");
+
+    textarea.addEventListener('input', function () {
+
+      var string = textarea.value;
+      count.textContent = string.length;
+    }, false);
   </script>
 </body>
 
