@@ -46,7 +46,6 @@
     var chars = document.getElementById("character-count");
     var words = document.getElementById("word-count");
 
-
     textarea.addEventListener('input', function () {
 
       // get chars count
@@ -56,7 +55,7 @@
       var array = textarea.value.split(/[\n\r\s]+/g).filter(function (word) {
         return word.length > 0 && word !== ".";
       });
-      console.log(array)
+
       words.textContent = array.length;
     }, false);
   </script>
