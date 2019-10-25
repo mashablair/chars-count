@@ -39,16 +39,23 @@
   <label for="text">Enter your text below.</label>
   <textarea id="text"></textarea>
 
-  <p>You've written <strong><span id="character-count">0</span> characters</strong>.</p>
+  <p>You've written <strong><span id="character-count">0</span> characters</strong> and <strong><span id="word-count">0</span> words</strong>.</p>
 
   <script>
     var textarea = document.getElementById("text");
-    var count = document.getElementById("character-count");
+    var chars = document.getElementById("character-count");
+    var words = document.getElementById("word-count");
+
 
     textarea.addEventListener('input', function () {
 
+      // get chars count
       var string = textarea.value;
-      count.textContent = string.length;
+      chars.textContent = string.length;
+
+      // get word count
+      var array = string.split(' ');
+      words.textContent = array.length;
     }, false);
   </script>
 </body>
