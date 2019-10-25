@@ -50,11 +50,13 @@
     textarea.addEventListener('input', function () {
 
       // get chars count
-      var string = textarea.value;
-      chars.textContent = string.length;
+      chars.textContent = textarea.value.length;
 
       // get word count
-      var array = string.split(' ');
+      var array = textarea.value.split(/[\n\r\s]+/g).filter(function (word) {
+        return word.length > 0 && word !== ".";
+      });
+      console.log(array)
       words.textContent = array.length;
     }, false);
   </script>
