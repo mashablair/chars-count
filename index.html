@@ -39,27 +39,20 @@
   <label for="text">Enter your text below.</label>
   <textarea id="text"></textarea>
 
-  <p aria-live="polite" id="message">You've written <strong><span id="character-count">0</span> characters</strong> and <strong><span id="word-count">0</span> words</strong>.</p>
+  <p aria-live="polite" id="message">You've written 0 characters and 0 words.</p>
 
   <script>
     var textarea = document.getElementById("text");
-    // var chars = document.getElementById("character-count");
-    // var words = document.getElementById("word-count");
     var message = document.getElementById("message");
 
     textarea.addEventListener('input', function () {
-
-      // get chars count
-      var chars = textarea.value.length;
 
       // get word count
       var array = textarea.value.split(/[\n\r\s]+/g).filter(function (word) {
         return word.length > 0 && word !== ".";
       });
 
-      var words = array.length;
-
-      message.innerHTML = `You've written <strong>${chars} characters</strong> and <strong>${words} words</strong>.`;
+      message.innerHTML = `You've written ${textarea.value.length} characters and ${array.length} words.`;
     }, false);
   </script>
 </body>
